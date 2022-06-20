@@ -1,5 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
 :root {
     --background-color: #121212;
     --font-color: #fdfdfd;
 }
 
+body {
+    background-color: var(--background-color);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.main-page {
+    height: 100vh;
+}
+
+
+/* ------------tag--------------------- */
+.hashtag {
+    font-size: 18px;
+    color: var(--font-color);
+}
+
+
+/* --------------wave------------------- */
+.wave {
+    background-color: var(--font-color);
+}
+
+.main-title {
+    color: var(--font-color);
+    font-size: 70px;
+    font-weight: 900;
+}
+
+.portfolio {
+    font-size: 60px;
+    color: var(--font-color);
+    font-weight: 100;
+}
+
+.main-sub-text {
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--font-color);
+}
+
+/* 볼드 처리 해아함 */
+
+.about-me-page {
+    padding-top: 120px;
+    position: relative;
+}
+
+.about-me-page {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.my-photo,
+.advantages-motto {
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-text-box {
+    margin: 40px 0 0 100px;
+    position: absolute;
+    top: 70px;
+}
+
+.title {
+    font-size: 70px;
+    font-weight: bold;
+    color: var(--font-color);
+    margin-bottom: 70px;
+}
+
+.page-number {
+    font-size: 300px;
+    color: #232323;
+    font-weight: bold;
+    position: absolute;
+    top: -120px;
+}
+
+.name {
+    font-size: 18px;
+    color: var(--font-color);
+    height: 24px;
+    padding: 0 18px;
+}
+
+.my-name-bd > .bor{
+    border-left: 1px solid var(--font-color);
+    border-right: 1px solid var(--font-color);
+}
+
+/* -----지워졌다 다시 쓰는부분 ---------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----지워졌다 다시 쓰는부분 ---------- */
+.advantages-motto {
+    padding-top: 120px;
+}
+
+.advantages-content { 
+    margin-bottom: 137px;
+}
+
+.advantages,
+.motto {
+    font-size: 40px;
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+.advantages:after,
+.motto:after {
+    content: '';
+    background: var(--font-color);
+    width: 90px;
+    height: 1px;
+    display: block;
+    margin-top: 25px;
+}
+
+.advantages-motto-sub-text {
+    color: #c0c0c0;
+    margin-top: 25px;
+    font-weight: 300;
+    line-height: 150%;
+
+}
+
+.advantages-motto-sub-text > span {
+    font-weight: bold;
+    font-size: 21px;
+    color: var(--font-color);
+}
