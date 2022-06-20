@@ -51,7 +51,9 @@ body {
 
 /* 볼드 처리 해아함 */
 
-.about-me-page {
+.about-me-page,
+.publishing-page-text,
+.contact-page-text {
     padding-top: 120px;
     position: relative;
 }
