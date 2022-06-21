@@ -118,3 +118,51 @@ let typeText = document.querySelector(".type-text")
             }
         }
 
+
+
+        const modalBtn = document.querySelector('.modal-btn');   
+        // 모달창띄우기 버튼
+        const modalOverlay = document.querySelector('.modal-overlay');
+        // 브라우저 위에 띄워질때 모달창을 포함한 브라우저의 모든 공간 
+        const modalClose = document.querySelector('.close');
+        // 엑스버튼
+
+        modalBtn.addEventListener('click',modalOn);
+        modalClose.addEventListener('click',modalOff);
+        modalOff();
+        // 여기에 modalOff(); 를 써 준 이유는 처음 브라우저가 열렸을 때 모달오프를 해놓지 않으면 m 을 눌렀을 때 모달창이 열리지 않는다 그래서 아예 닫는다고 실행시켜놓는거임
+        modalOverlay.addEventListener('click',e => {
+            console.log(e.target);
+            // target = 클릭된 부분 
+            const target = e.target;
+            if(target.classList.contains('modal-overlay')){
+                // 클릭된 부분에 modal-overlay 클래스가 있으면 모달창을 끔
+                modalOff();
+            }
+        });
+
+        console.log(modalOverlay.style.display === 'flex');
+        window.addEventListener('keyup',e=>{
+            console.log(e.key === 'Escape');
+            if(modalOverlay.style.display === 'flex' && e.key === 'Escape')
+                modalOff();
+                // modalOverlay 의 스타일이 flex 일때 esc 키가 눌리면 모달창을 끔
+
+            if(modalOverlay.style.display === 'none' && (e.key === 'm' || e.key === 'M')){
+                modalOn();
+                // modalOverlay의 스타일이 none 이며 m 또는 M 키가 눌렸을 때 모달창을 켠다
+            }
+            })
+
+        console.log(modalOverlay.classList.contains('modal-overlay'));
+        
+        function modalOn(){
+            modalOverlay.style.display = 'flex';
+            // modalOverlay 에 display:flex 대입
+        }
+
+        function modalOff(){
+            modalOverlay.style.display = 'none';
+            // modalOverlay 에 display: none 대입
+        }
+
