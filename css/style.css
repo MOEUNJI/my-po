@@ -4,6 +4,12 @@
  font-family: 'Noto Sans KR', sans-serif;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+.nanumpenscript * {
+    font-family: 'Nanum Brush Script', cursive;
+}
+
 :root {
     --background-color: #121212;
     --font-color: #fdfdfd;
@@ -22,7 +28,66 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
+}
+
+.snow {
+    width: 10px;
+    height: 10px;
+    background: #4D4D4D;
+    border-radius: 50%;
+    opacity: 0;
+    animation: snow 5s linear infinite;
+    /* 눈 한알 한알 */
+}
+
+.snow:nth-of-type(2n){
+    width: 7px;
+    height: 7px;
+    animation-duration: 15s;
+    animation-delay: 1s;
+}
+
+.snow:nth-of-type(2n + 1){
+    animation-duration: 25s;
+    animation-delay: 2s;
+}
+
+.snow:nth-of-type(9n){
+    animation-duration: 23s;
+    animation-delay: 3s;
+}
+
+@keyframes snow {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-15px, 20vh);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translate(15px, 40vh);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate(-15px, 60vh);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(0px, 80vh);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(100vh);
+    }
 }
 
 
@@ -94,16 +159,64 @@ body {
 
 /* --------------wave------------------- */
 .wave-box {
+    border-radius: 5px;
+    box-shadow: 0 2px 30px rgba(black, .2);
+    background: lighten(#f0f4c3, 10%);
     position: relative;
+    transform: translate3d(0, 0, 0);
 }
 
 .wave {
-    background-color: var(--font-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #fdfdfd;
+    opacity: 0.5;
+    width: 600px;
+    height: 600px;
+    margin-left: -300px;
+    margin-top: -300px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+    z-index: -1;
+}
+
+.wave.-three {
+    animation: drift 5000ms infinite linear;
+}
+
+.wave.-two {
+    animation: drift 7000ms infinite linear;
+    opacity: 1;
+    background: var(--font-color);
+}
+
+.wave-box:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+    from {
+        transform: rotate(0deg);
+    }
+
+    from {
+        transform: rotate(360deg);
+    }
 }
 
 .main-title {
-    color: var(--font-color);
-    font-size: 70px;
+    color: var(--background-color);
+    font-size: 65px;
     font-weight: 900;
 }
 
@@ -116,10 +229,13 @@ body {
 .main-sub-text {
     font-size: 16px;
     line-height: 150%;
-    color: var(--font-color);
+    color: var(--background-color);
+    text-align: center;
 }
 
-/* 볼드 처리 해아함 */
+.bold-text {
+    font-weight: 900;
+}
 
 .about-me-page,
 .publishing-page-text,
@@ -137,6 +253,13 @@ body {
 .advantages-motto {
     display: flex;
     justify-content: space-between;
+}
+
+.typing-text {
+    display: inline;
+    vertical-align: middle;
+    border-right: .05em solid black;
+    animation: cursor 0.2s ease infinite;
 }
 
 .my-text-box {
@@ -158,6 +281,7 @@ body {
     font-weight: bold;
     position: absolute;
     top: -120px;
+    z-index: -1;
 }
 
 .name {
@@ -174,20 +298,21 @@ body {
 
 /* -----지워졌다 다시 쓰는부분 ---------- */
 
+.type-text {
+    padding-top: 70px;
+    font-size: 50px;
+    color: var(--font-color);
+    height: 70px;
+    font-family: 'Nanum Brush Script';
+}
 
+.text-above {
+    margin-top: 15px;
+    font-size: 21px;
+    color: var(--font-color);
 
+}
 
-
-
-
-
-
-
-
-
-
-
-/* -----지워졌다 다시 쓰는부분 ---------- */
 .advantages-motto {
     padding-top: 120px;
 }
@@ -221,8 +346,158 @@ body {
 
 }
 
-.advantages-motto-sub-text > span {
+.advantages-bold-text {
     font-weight: bold;
     font-size: 21px;
     color: var(--font-color);
+}
+
+.advantages-motto-fade-slides {
+    width: 531px;
+    height: 538px;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 531px;
+    height: 538px;
+    opacity: 0;
+    z-index: 1;
+    transition: 1s;
+    color: #fff;
+    font-size: 48px;
+    box-sizing: border-box;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 99;
+}
+
+.skill {
+    margin-top: 120px;
+}
+
+.skill-text-eyes {
+    display: flex;
+    position: relative;
+}
+
+.skill-publishing-sub-text {
+    color:#c0c0c0;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.skill-eyes {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.eyes {
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.eye {
+    width: 100px;
+    height: 200px;
+    background: #ffffff;
+    margin: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.ball {
+    width: 60px;
+    height: 60px;
+    background: #121212;
+    position: absolute;
+    top: 23%;
+    left: 33%;
+    border-radius: 50%;
+}
+
+.protege {
+    display: flex;
+    margin-top: 120px;
+    justify-content: space-between;
+}
+
+.protage-width {
+    width: 200px;
+    text-align: center;
+}
+
+.count-border {
+    border: 1px solid var(--font-color);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: var(--font-color);
+}
+
+.protege-name {
+    margin-top: 50px;
+    color: var(--font-color);
+}
+
+
+.publishing-page {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.page-number-ab2 {
+    margin-bottom: 50px;
+    padding: 100px 0 0 100px;
+}
+
+.publishing-sub-text2 {
+    margin-left: 100px;
+}
+
+.publishing-page-text2 {
+    display: flex;
+    align-items: center;
+    color: var(--font-color);
+    margin: 80px 0 0 100px;
+}
+
+.publishing-page-num {
+    font-size: 32px;
+}
+
+.publishing-page-title {
+    width: 100%;
+    margin-left: 43px;
+}
+
+.all-publishing {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.modal-overlay {
+    width: 1010px;
+    height: 472px;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+.shining-moment-img:hover {
+    transform: translateY(-86%);
+    transition: 20s;
 }
