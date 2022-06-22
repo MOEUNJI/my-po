@@ -1,3 +1,5 @@
+// 메인페이지 글씨
+
 function paragraph(element) {
     const array = element.innerText.split('')
     const special = ['~', '@', '!', '#', '$', '%', '^', '&', '*']
@@ -44,10 +46,9 @@ function paragraph(element) {
 
 
 
+// 지워졌다 새로운거 써지는 글씨
 
-
-let typeText = document.querySelector(".type-text")
-        // var textToBeTyped = "서근입니다."
+        let typeText = document.querySelector(".type-text")
         var textToBeTypedArr = ["끊임없이 성장중인", "맡은 바에 최선을 다하는", "노력하며,성실하게 나아가는"]
         // 이 부분에서 조정하면 됨
         var index = 0, isAdding = true, textToBeTypedIndex = 0
@@ -93,7 +94,7 @@ let typeText = document.querySelector(".type-text")
 
 
 
-
+// 페이드인 슬라이드
 
         let slides = document.querySelectorAll(".advantages-motto-fade-slides .slide");
         let currentSlide = 0;
@@ -106,6 +107,9 @@ let typeText = document.querySelector(".type-text")
         }
 
 
+
+
+// 눈알
         var balls = document.getElementsByClassName("ball");
         document.onmousemove = function () {
             var x = event.clientX * 50 / window.innerWidth + "%";
@@ -120,11 +124,14 @@ let typeText = document.querySelector(".type-text")
 
 
 
-        const modalBtn = document.querySelector('.modal-btn');   
+
+
+// 모달창
+        const modalBtn = document.getElementsByClassName('modal-btn')[0];   
         // 모달창띄우기 버튼
-        const modalOverlay = document.querySelector('.modal-overlay');
+        const modalOverlay = document.getElementsByClassName('modal-overlay')[0];
         // 브라우저 위에 띄워질때 모달창을 포함한 브라우저의 모든 공간 
-        const modalClose = document.querySelector('.close');
+        const modalClose = document.getElementsByClassName('close')[0];
         // 엑스버튼
 
         modalBtn.addEventListener('click',modalOn);
