@@ -1,3 +1,5 @@
+
+
 // 메인페이지 글씨
 
 function paragraph(element) {
@@ -94,7 +96,7 @@ function paragraph(element) {
 
 
 
-// 페이드인 슬라이드
+        // 페이드인 슬라이드
 
         let slides = document.querySelectorAll(".advantages-motto-fade-slides .slide");
         let currentSlide = 0;
@@ -105,16 +107,16 @@ function paragraph(element) {
             currentSlide =(currentSlide+1) % slides.length;
             slides[currentSlide].className = " slide showing";
         }
+        
 
 
-
-
+        
 // 눈알
         var balls = document.getElementsByClassName("ball");
         document.onmousemove = function () {
             var x = event.clientX * 50 / window.innerWidth + "%";
             var y = event.clientY * 50 / window.innerHeight + "%";
-
+            
             for (var i = 0; i < 2; i++) {
                 balls[i].style.left = x;
                 balls[i].style.top = y;
@@ -125,8 +127,8 @@ function paragraph(element) {
 
 
 
-
-// 모달창
+        
+        // 모달창
         const modalBtn = document.getElementsByClassName('modal-btn');   
         // 모달창띄우기 버튼
         const modalOverlay = document.getElementsByClassName('modal-overlay');
@@ -145,21 +147,92 @@ function paragraph(element) {
             }
         }
 
-
-
+        
+        
         // 카운트업
         // console.log(countBox.dataset.indexNumber);
 
         let countBox = document.getElementsByClassName('count')[0];
         let count = countBox.dataset.number
 
-        for( i = 0; i < count.length. i++;){
-
-            setInterval(()=>{
+        // for( i = 0; i < count.length. i++;){
+            
+            // }
+        
+        // let i = 0;
+        for(let i = 0; i < 90 ; i++){
+                setInterval(()=>{
                 if(i <= count){
                     i++;
-                    console.log(count);
+                    // console.log(i);
+                    // console.log(count);
+                }else{
+                    
+                }
+                
+            },500)
+        }
+            
+        
+
+        function glitch(element){
+            let count = 0
+            setInterval(()=>{
+                // element
+                const skew = Math.random() * 20 - 10
+                //  element::before
+                const top1 = Math.random() * 100
+                const btm1 = Math.random() * 100
+                //  element::after
+                const top2 = Math.random() * 100
+                const btm2 = Math.random() * 100
+
+                element.style.setProperty('--skew', `${skew}deg`)
+                element.style.setProperty('--t1', `${top1}%`)
+                element.style.setProperty('--b1', `${btm1}%`)
+                element.style.setProperty('--t2', `${top2}%`)
+                element.style.setProperty('--b2', `${btm2}%`)
+                element.style.setProperty('--scale','1')
+
+                count++ 
+
+                if(count % 15 === 0){
+                    // 1.5초마다 실행
+                    const bigSkew = Math.random() * 180 - 90
+                    element.style.setProperty('--skew',`${bigSkew}deg`)
                 }
 
-            },20)
+                if(count % 30 === 0){
+                    // 3초마다 실행
+                    const bigScale = 1 + Math.random() / 2
+                    element.style.setProperty('--scale',`${bigScale}deg`)
+                }
+            }, 100)
+        }
+
+
+
+
+        const  lastGlitchEffect = document.getElementsByClassName('mongs-portfolio')[0];
+        glitch(lastGlitchEffect)
+        
+        
+
+        
+        // 눈 한알 한 알 
+        function createSnow(){
+            // let   = document.querySelector('.main-page');
+            const el = document.createElement('div');
+            el.classList.add('snow');
+            el.style.marginLeft = randomPosition() + 'px';
+            document.body.appendChild(el);
+            //바디의 자식요소로 추가되어있음 사용할땐 섹션명 잡고 거기에 추가해줌
+        }
+        function randomPosition(){
+            return Math.floor(Math.random() * window.innerWidth)
+            // 랜덤값의 크기는 웹브라우저의 넓이를 넘어가지 못하게 (웹브라우저 안에서 랜덤한 숫자가 나오도록 지정)
+        }
+        
+        for(let i = 0; i < 300; i++){
+            createSnow();
         }

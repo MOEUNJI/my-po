@@ -678,10 +678,37 @@ body {
     color: #c0c0c0;
 }
 
-.mongs-portfolio {
-    font-size: 30px;
-}
-
 .count[data-number="70"]{
     color: var(--font-color);
+}
+
+
+.mongs-portfolio {
+    font-size: 40px;
+    color: #fdfdfd;
+    position: relative;
+    transform: skew(var(--skew)) scale(var(--scale));
+}
+
+.mongs-portfolio::before , p::after {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    clip-path: clip-path 50ms ease-in;
+}
+
+.mongs-portfolio::before {
+    left: 5px;
+    text-shadow: 2px -2px #2a96d4;
+    clip-path: polygon(
+        0 var(--t1), 100% var(--t1), 100% var(--b1), 0 var(--b1)
+    );
+}
+
+.mongs-portfolio::after {
+    left: -5px;
+    text-shadow: -2px 2px #cc2a1f;
+    clip-path: polygon(
+        0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2)
+    );
 }
