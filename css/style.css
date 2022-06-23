@@ -263,13 +263,6 @@ body {
     justify-content: space-between;
 }
 
-.typing-text {
-    display: inline;
-    vertical-align: middle;
-    border-right: .05em solid black;
-    animation: cursor 0.2s ease infinite;
-}
-
 .my-text-box {
     margin: 40px 0 0 100px;
     position: absolute;
@@ -711,4 +704,12 @@ body {
     clip-path: polygon(
         0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2)
     );
+}
+
+
+.typing-text {
+    display: inline;
+    vertical-align: middle;
+    border-right: .05em solid black;
+    animation: cursor 0.2s ease infinite;
 }

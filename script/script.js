@@ -219,20 +219,44 @@ function paragraph(element) {
         
 
         
-        // 눈 한알 한 알 
-        function createSnow(){
-            // let   = document.querySelector('.main-page');
-            const el = document.createElement('div');
-            el.classList.add('snow');
-            el.style.marginLeft = randomPosition() + 'px';
-            document.body.appendChild(el);
-            //바디의 자식요소로 추가되어있음 사용할땐 섹션명 잡고 거기에 추가해줌
-        }
-        function randomPosition(){
-            return Math.floor(Math.random() * window.innerWidth)
-            // 랜덤값의 크기는 웹브라우저의 넓이를 넘어가지 못하게 (웹브라우저 안에서 랜덤한 숫자가 나오도록 지정)
-        }
+        // // 눈 한알 한 알 
+        // const page  = document.querySelector('.main-page');
+        // function createSnow(){
+        //     const el = document.createElement('div');
+        //     el.classList.add('snow');
+        //     el.style.marginLeft = randomPosition() + 'px';
+        //     document.page.appendChild(el);
+        //     //바디의 자식요소로 추가되어있음 사용할땐 섹션명 잡고 거기에 추가해줌
+        // }
+        // function randomPosition(){
+        //     return Math.floor(Math.random() * window.innerWidth)
+        //     // 랜덤값의 크기는 웹브라우저의 넓이를 넘어가지 못하게 (웹브라우저 안에서 랜덤한 숫자가 나오도록 지정)
+        // }
         
-        for(let i = 0; i < 300; i++){
-            createSnow();
-        }
+        // for(let i = 0; i < 300; i++){
+        //     createSnow();
+        // }
+
+
+
+
+
+        // "use strict";
+        // const content3 = "개나리같은 사람이 되잔"
+        // const text3 = document.querySelector(".typing-text")
+        // let k = 0;
+
+        // function sleep(delay) {
+        //     const start = new Date().getTime();
+        //     while (new Date().getTime() < start + delay);
+        // }
+
+        // function typing2() {
+        //     text3.textContent += content3[k++];
+        //     if (k > content3.length) {
+        //         text3.textContent = ""
+        //         k = 0;
+        //         sleep(3000);
+        //     }
+        // }
+        // setInterval(typing2, 200)
