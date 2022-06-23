@@ -512,6 +512,7 @@ body {
     height: 475px;
     overflow: hidden;
     margin: 50px 0 0 100px;
+    position: relative;
 }
 
 .publishing-page-name {
@@ -552,8 +553,8 @@ body {
 
 .modal { 
     background: #fff;
-    width: 900px;
-    height: 620px;
+    width: 1010px;
+    height: 475px;
     overflow: scroll;
     overflow-x: hidden;
     box-sizing: border-box;
@@ -561,7 +562,28 @@ body {
     flex-direction: column;
     transition: 8s;
     border: 1px solid var(--font-color);
+    position: relative;
 }   
+
+.close,
+.close:after {
+    width: 35px;
+    height: 1px;
+    background: var(--font-color);
+    position: absolute;
+    right: 0;
+    top: 5%;
+    content: '';
+    cursor: pointer;
+}
+
+.close {
+    transform: rotate(-45deg);
+}
+
+.close:after {
+    transform: rotate(-90deg);
+}
 
 .modal::-webkit-scrollbar {
     width: 8px;
