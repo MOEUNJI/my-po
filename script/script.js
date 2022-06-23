@@ -150,14 +150,16 @@ function paragraph(element) {
         // 카운트업
         // console.log(countBox.dataset.indexNumber);
 
-        let countBox = document.getElementsByClassName('count');
+        let countBox = document.getElementsByClassName('count')[0];
+        let count = countBox.dataset.number
 
-        for( let i = 0 ; i < countBox.length; i++){
-            countBox[i].dataset.indexNumber
+        for( i = 0; i < count.length. i++;){
+
+            setInterval(()=>{
+                if(i <= count){
+                    i++;
+                    console.log(count);
+                }
+
+            },20)
         }
-
-
-
-        for(var i = 0; i <= 10; i++) {
-            console.log(i);
-          }

@@ -681,3 +681,7 @@ body {
 .mongs-portfolio {
     font-size: 30px;
 }
+
+.count[data-number="70"]{
+    color: var(--font-color);
+}
