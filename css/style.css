@@ -1,20 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
-.notosanskr * { 
- font-family: 'Noto Sans KR', sans-serif;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
-
-.nanumpenscript * {
-    font-family: 'Nanum Brush Script', cursive;
+@import url('https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css');
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-
-.nanummyeongjo * {
- font-family: 'Nanum Myeongjo', serif;
-}
 
 :root {
     --background-color: #121212;
@@ -37,6 +31,14 @@ body {
     /* flex-direction: column; */
 }
 
+.snow-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 .snow {
     width: 10px;
     height: 10px;
@@ -44,22 +46,23 @@ body {
     border-radius: 50%;
     opacity: 0;
     animation: snow 5s linear infinite;
+    position: absolute;
     /* 눈 한알 한알 */
 }
 
-.snow:nth-of-type(2n){
+.snow1{
     width: 7px;
     height: 7px;
     animation-duration: 15s;
     animation-delay: 1s;
 }
 
-.snow:nth-of-type(2n + 1){
+.snow2{
     animation-duration: 25s;
     animation-delay: 2s;
 }
 
-.snow:nth-of-type(9n){
+.snow3{
     animation-duration: 23s;
     animation-delay: 3s;
 }
@@ -241,10 +244,6 @@ body {
     text-align: center;
 }
 
-.bold-text {
-    font-weight: 900;
-}
-
 .about-me-page,
 .publishing-page-text,
 .contact-page-text {
@@ -304,7 +303,7 @@ body {
     font-size: 50px;
     color: var(--font-color);
     height: 70px;
-    font-family: 'Nanum Brush Script';
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 .text-above {
@@ -421,9 +420,10 @@ body {
     height: 60px;
     background: #121212;
     position: absolute;
-    top: 23%;
-    left: 33%;
+    top: 50%;
+    left: 50%;
     border-radius: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .protege {
@@ -508,9 +508,12 @@ body {
     position: relative;
 }
 
+.shiningmoment {
+    font-family: 'Nanum Myeongjo';
+}
+
 .publishing-page-name {
     font-size: 50px;
-    font-family: 'Nanum Myeongjo';
 }
 
 .publishing-page-type {

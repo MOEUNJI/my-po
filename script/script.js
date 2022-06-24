@@ -112,14 +112,30 @@ function paragraph(element) {
 
         
 // 눈알
-        var balls = document.getElementsByClassName("ball");
-        document.onmousemove = function () {
-            var x = event.clientX * 50 / window.innerWidth + "%";
-            var y = event.clientY * 50 / window.innerHeight + "%";
+        const eye = document.querySelector('.eyes');
+        const balls = document.getElementsByClassName("ball");
+
+
+        document.onmousemove = function (e) {
+            const originX = (eye.getBoundingClientRect().left + eye.getBoundingClientRect().right)/2;
+            const originY = (eye.getBoundingClientRect().top + eye.getBoundingClientRect().bottom)/2;
+
+
+            console.log(`커서위치는 x:${e.clientX} y:${e.clientY}`)
+            console.log(`눈 위치는 ${originX} ${originY}`)
             
-            for (var i = 0; i < 2; i++) {
-                balls[i].style.left = x;
-                balls[i].style.top = y;
+
+            let x = (e.clientX - originX)/window.innerWidth*50;
+            let y = (e.clientY - originY)/window.innerHeight*100;
+
+            if(x>10)x=10;
+            if(x<-10)x=-10;
+            if(y>25)y=25;
+            if(y<-25)y=-25;
+            
+            for (let i = 0; i < 2; i++) {
+                balls[i].style.top = `${50+y}%`
+                balls[i].style.left = `${50+x}%`
 
             }
         }
@@ -152,27 +168,23 @@ function paragraph(element) {
         // 카운트업
         // console.log(countBox.dataset.indexNumber);
 
-        let countBox = document.getElementsByClassName('count')[0];
-        let count = countBox.dataset.number
+        const countBox = document.getElementsByClassName('count');
 
-        // for( i = 0; i < count.length. i++;){
-            
-            // }
-        
-        // let i = 0;
-        for(let i = 0; i < 90 ; i++){
-                setInterval(()=>{
-                if(i <= count){
-                    i++;
-                    // console.log(i);
-                    // console.log(count);
-                }else{
-                    
-                }
+
+        for(let i =0 ; i < countBox.length ; i ++ ){
+            let count = countBox[i].dataset.number;
+
+            for(let j=0;j<=count;j++){
+                setTimeout(() => {
+                    countBox[i].innerText=j;
+                }, 20*j );
                 
-            },500)
+            }
         }
-            
+
+        
+
+        // 글리치효과
         
 
         function glitch(element){
@@ -210,32 +222,43 @@ function paragraph(element) {
             }, 100)
         }
 
-
-
-
         const  lastGlitchEffect = document.getElementsByClassName('mongs-portfolio')[0];
         glitch(lastGlitchEffect)
         
         
 
         
-        // // 눈 한알 한 알 
-        // const page  = document.querySelector('.main-page');
-        // function createSnow(){
-        //     const el = document.createElement('div');
-        //     el.classList.add('snow');
-        //     el.style.marginLeft = randomPosition() + 'px';
-        //     document.page.appendChild(el);
-        //     //바디의 자식요소로 추가되어있음 사용할땐 섹션명 잡고 거기에 추가해줌
-        // }
-        // function randomPosition(){
-        //     return Math.floor(Math.random() * window.innerWidth)
+        // 눈 한알 한 알 
+        const page  = document.querySelector('.snow-box');
+        function createSnow(){
+            const el = document.createElement('div');
+            el.classList.add('snow');
+            el.classList.add(`snow${Math.floor(Math.random()*3)+1}`);
+            el.style.left = randomWidthPosition() + 'px';
+            // el.style.marginTop = randomHeightPosition() + 'px';
+            page.appendChild(el);
+
+            setTimeout(() => {
+                el.remove();
+            }, 25000);
+        }
+        function randomWidthPosition(){
+            return Math.floor(Math.random() * window.innerWidth)
+            // 랜덤값의 크기는 웹브라우저의 넓이를 넘어가지 못하게 (웹브라우저 안에서 랜덤한 숫자가 나오도록 지정)
+        }
+        
+        // function randomHeightPosition(){
+        //     return Math.floor(Math.random() * window.innerHeight)
         //     // 랜덤값의 크기는 웹브라우저의 넓이를 넘어가지 못하게 (웹브라우저 안에서 랜덤한 숫자가 나오도록 지정)
         // }
         
         // for(let i = 0; i < 300; i++){
         //     createSnow();
         // }
+
+        setInterval(() => {
+            createSnow();
+        }, 100);
 
 
 
@@ -259,4 +282,4 @@ function paragraph(element) {
         //         sleep(3000);
         //     }
         // }
-        // setInterval(typing2, 200)
+        // setInterval(typing2, 200);
