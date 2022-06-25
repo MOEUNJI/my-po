@@ -8,6 +8,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'HancomUljuBangudae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205-2@1.0/HancomUljuBangudae.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 :root {
@@ -37,6 +43,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: hidden;
 }
 
 .snow {
@@ -53,17 +60,17 @@ body {
 .snow1{
     width: 7px;
     height: 7px;
-    animation-duration: 15s;
+    animation-duration: 8s;
     animation-delay: 1s;
 }
 
 .snow2{
-    animation-duration: 25s;
+    animation-duration: 10s;
     animation-delay: 2s;
 }
 
 .snow3{
-    animation-duration: 23s;
+    animation-duration: 15s;
     animation-delay: 3s;
 }
 
@@ -238,10 +245,14 @@ body {
 }
 
 .main-sub-text {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 150%;
     color: var(--background-color);
     text-align: center;
+}
+
+.bold-text {
+    font-weight: 900;
 }
 
 .about-me-page,
@@ -260,6 +271,15 @@ body {
 .advantages-motto {
     display: flex;
     justify-content: space-between;
+}
+
+.my-photo-photo {
+    overflow: hidden;
+}
+
+.my-id-photo:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .my-text-box {
@@ -301,7 +321,7 @@ body {
 .type-text {
     padding-top: 70px;
     font-size: 50px;
-    color: var(--font-color);
+    color: #00d9ff;
     height: 70px;
     font-family: 'Nanum Brush Script', cursive;
 }
@@ -309,8 +329,14 @@ body {
 .text-above {
     margin-top: 15px;
     font-size: 21px;
-    color: var(--font-color);
+    color: #c0c0c0;
+    font-weight: 300;
+}
 
+.text-above > span {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--font-color);
 }
 
 .advantages-motto {
@@ -343,7 +369,21 @@ body {
     margin-top: 25px;
     font-weight: 300;
     line-height: 150%;
+}
 
+.flower-text-box{
+    margin-top: 30px;
+    height: 50px;
+    font-size: 32px;
+    color: #fff493;
+    font-family: 'HancomUljuBangudae';
+    display: flex;
+    align-items: center;
+}
+
+.flower-img {
+    width: 50px;
+    height: 50px;
 }
 
 .advantages-bold-text {
@@ -377,13 +417,10 @@ body {
     z-index: 99;
 }
 
-.skill {
-    margin-top: 120px;
-}
-
 .skill-text-eyes {
     display: flex;
     position: relative;
+    margin-top: 200px;
 }
 
 .skill-publishing-sub-text {
@@ -508,11 +545,13 @@ body {
     position: relative;
 }
 
-.shiningmoment {
+.publishing-page-name-shiningmoment {
+    font-size: 50px;
     font-family: 'Nanum Myeongjo';
 }
 
-.publishing-page-name {
+.publishing-page-name-megacoffee {
+    font-family: 'S-CoreDream-4Regular';
     font-size: 50px;
 }
 
@@ -521,6 +560,10 @@ body {
     margin-top: 15px;
     font-weight: 300;
     color: #c0c0c0;
+}
+
+.publishing-page-name-megacoffee > span {
+    font-size: 28px;
 }
 
 .modal-btn {
@@ -533,6 +576,46 @@ body {
     border: 1px solid var(--font-color);
     cursor: pointer;
 }
+
+.modal-btn {
+    --c: #a1a1a1; /* the color */
+    --b: 1px;    /* border length*/
+    --d: 10px;    /* the cube depth */
+    
+    --_s: calc(var(--d) + var(--b));
+    
+    color: var(--c);
+    border: solid #0000;
+    border-width: var(--b) var(--b) var(--_s) var(--_s);
+    background:
+      conic-gradient(at left var(--d)  bottom var(--d),
+        #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
+      conic-gradient(at left var(--_s) bottom var(--_s),
+        #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
+    transform: translate(calc(var(--d)/-1),var(--d));
+    clip-path: 
+      polygon(
+       var(--d) 0%, 
+       var(--d) 0%, 
+       100% 0%, 
+       100% calc(100% - var(--d)),
+       100% calc(100% - var(--d)),
+       var(--d) calc(100% - var(--d))
+      );
+    transition: 0.5s;
+  }
+  .modal-btn:hover {
+    transform: translate(0,0);
+    clip-path: 
+      polygon(
+       0% var(--d), 
+       var(--d) 0%, 
+       100% 0%, 
+       100% calc(100% - var(--d)), 
+       calc(100% - var(--d)) 100%, 
+       0% 100%
+     );
+  }
 
 
 .modal-overlay {
@@ -594,10 +677,19 @@ body {
     background: var(--background-color);
     border: none;
     padding: 15px;
+    transition: 0.5s;
 }
 
 .view-site > a {
     color: var(--font-color);
+}
+
+.view-site:hover {
+    background: #fdfdfd;
+}
+
+.view-site:hover > a {
+    color: #121212;
 }
 
 .contact-page {
@@ -649,18 +741,20 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 200px;
+    overflow: hidden;
 }
 
 .email-phone-text-all {
     font-size: 21px;
     font-weight: 300;
+    margin-top: 15px;
 }
 
 .email,
 .phone {
     font-size: 50px;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 55px;
     text-shadow: -3px 2px 0 rgba(255,255,255,0.25);
     margin-bottom: 30px;
 }
@@ -715,4 +809,35 @@ body {
     vertical-align: middle;
     border-right: .05em solid black;
     animation: cursor 0.2s ease infinite;
+}
+
+
+.fade {
+    opacity: 0;
+    transition: 1s;
+}
+
+.to-top{
+    transform: translateY(-200px);
+}
+
+.to-bottom{
+    transform: translateY(200px);  
+}
+
+.to-left{
+    transform: translateX(-200px);
+}
+
+.to-right{
+    transform: translateX(200px);
+}
+
+.to-bottom-right{
+    transform: translate(200px,200px);
+}
+
+.in {
+    opacity: 1;
+    transform: none;
 }
