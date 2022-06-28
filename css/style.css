@@ -569,12 +569,12 @@ body {
 .modal-btn {
     background: none;
     width: 200px;
-    height: 50px;
+    height: 40px;
     font-size: 18px;
     /* padding: 15px; */
     color: var(--font-color);
     border: 1px solid var(--font-color);
-    cursor: pointer;
+    overflow: hidden;
 }
 
 .modal-btn {
@@ -615,6 +615,34 @@ body {
        calc(100% - var(--d)) 100%, 
        0% 100%
      );
+  }
+
+
+  .modal-btn span{
+    display: inline-block;
+    transition: 0.5s;
+  }
+   .modal-btn span:nth-child(odd):before{
+    content: attr(data-text);
+    position: absolute;
+    transform: translateY(100%);
+  }
+  .modal-btn span:nth-child(odd){
+    transform: translateY(-100%);
+  }
+  .modal-btn:hover span:nth-child(odd){
+    transform: translateY(0);
+  }
+   .modal-btn span:nth-child(even):before{
+    content: attr(data-text);
+    position: absolute;
+    transform: translateY(-100%);
+  }
+   .modal-btn span:nth-child(even){
+    transform: translateY(100%);
+  }
+  .modal-btn:hover span:nth-child(even){
+    transform: translateY(0);
   }
 
 

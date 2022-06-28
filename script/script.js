@@ -81,11 +81,17 @@ const content = document.getElementsByClassName('content');
         // 카운트업
         // console.log(countBox.dataset.indexNumber);
 
-        const protege = document.querySelector('.protage');
+        const protege = document.querySelector('.protege');
+        let countUpChk=true;
         
         window.addEventListener('scroll', ()=>{
             if(protege.getBoundingClientRect().top-window.innerHeight < 0){
-                countUp();
+                if(countUpChk){
+                    countUpChk=false;
+                    countUp();
+                }
+            }else {
+                countUpChk=true;
             }
         })
         
