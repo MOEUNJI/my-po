@@ -1,12 +1,16 @@
-@media (max-width:1240px) {
-    .about-me-page {
-        width: 100%;
+@media (max-width:1240px){
+
+    .about-me-page,
+    .publishing-page,
+    .contact-page {
+        width: 90%;
         padding: 0 32px;
+        margin-top: 120px;
     }
 
     .my-id-photo {
-        width: 290px;
-        height: 360px;
+        width: 350px;
+        height: 430px;
         margin-top: 100px;
     }
 
