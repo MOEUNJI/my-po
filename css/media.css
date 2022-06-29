@@ -1,11 +1,16 @@
 @media (max-width:1240px){
 
+    body {
+        overflow-x: hidden;
+    }
+    
     .about-me-page,
     .publishing-page,
     .contact-page {
-        width: 90%;
+        width: 100%;
         padding: 0 32px;
         margin-top: 120px;
+        box-sizing: border-box;
     }
 
     .my-id-photo {
@@ -19,4 +24,123 @@
         width: 100%;
     }
 
+    
+    .view-box  {
+        width: 747px;
+        height: 350px;
+        margin: 50px auto 90px auto;
+    }
+
+    .view-box > img {
+        width: 747px;
+    }
+
+    .publishing-page-text2 {
+        width: 747px;
+        margin: 50px auto 0 auto;
+    }
+
+    .modal {
+        width: 747px;
+        height: 350px;
+    }
+
+    .publishing-page-name-shiningmoment,
+    .publishing-page-name-megacoffee {
+        font-size: 32px;
+    }
+    
+    .title {
+        font-size: 50px;
+    }
+
+    .greetings-sub {
+        margin: 32px 0;
+    }
+
+    .protage-width {
+        margin: 20px 20px;
+    }
+
+    .protege {
+        flex-wrap: wrap;
+    }
+
+    .wrap-one,
+    .wrap-two {
+        margin: 0 auto;
+    }
+
+    .slide {
+        width: 470px;
+        height: 480px;
+    }
+
+    .advantages-content {
+        margin-bottom: 60px;
+    }
+
+    .email-phone {
+        flex-wrap: wrap;
+    }
+
+    .glitch {
+        margin-top: 50px;
+    }
+
+}
+
+@media (max-width:960px){
+    .advantages-motto,
+    .my-photo  {
+        flex-direction: column;
+    }
+
+    .advantages-motto-fade-slides {
+        margin: 0 auto 50px auto;
+        width: 470px;
+        height: 480px;
+    }
+
+    .advantages-motto-text {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .advantages:after,
+    .motto:after {
+        margin: 32px auto;
+    }
+
+    .my-text-box {
+        position: relative;
+        margin: 42px auto;
+    }
+
+    .my-id-photo {
+        display: block;
+        margin: 120px auto;
+    }
+
+    .wave {
+        height: 500px;
+        width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 60%;
+    }
+
+    .main-title {
+        font-size: 42px;
+    }
+
+    .main-title-text {
+        margin-bottom: 100px;
+    }
+
+    .wrap-one,
+    .wrap-two {
+        flex-direction: column;
+    }
+    
 }

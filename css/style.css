@@ -24,6 +24,7 @@
 body {
     background-color: var(--background-color);
     font-family: 'Noto Sans KR', sans-serif;
+    overflow-x: hidden;
 }
 
 .main-page {
@@ -286,6 +287,7 @@ body {
     margin: 40px 0 0 100px;
     position: absolute;
     top: 70px;
+    width: 410px;
 }
 
 .title {
@@ -469,9 +471,15 @@ body {
     justify-content: space-between;
 }
 
+.wrap-one,
+.wrap-two {
+    display: flex;
+}
+
 .protage-width {
     width: 200px;
     text-align: center;
+    margin: 20px 20px;
 }
 
 .count-border {
@@ -746,6 +754,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     line-height: 170%;
+    margin: 32px 0;
 }
 
 .greetings-sub > span {
@@ -760,7 +769,7 @@ body {
     width: 280px;
     height: 1px;
     background: var(--font-color);
-    margin: 55px 0;
+    margin: 135px 0;
 }
 
 .email-phone {
@@ -781,13 +790,14 @@ body {
 .phone {
     font-size: 50px;
     font-weight: 600;
-    margin-top: 55px;
+    margin-top: 120px;
     text-shadow: -3px 2px 0 rgba(255,255,255,0.25);
     margin-bottom: 30px;
 }
 
 .phone {
     font-size: 35px;
+    margin-top: 32px;
 }
 
 .period {
