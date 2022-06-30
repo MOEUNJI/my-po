@@ -535,14 +535,18 @@ body {
     margin-left: 43px;
 }
 
+.shining-moment-img:hover,
+.mega-coffee-img:hover {
+    transition-duration: 15s;
+    transition-timing-function: linear;
+}
+
 .shining-moment-img:hover {
     transform: translateY(-86%);
-    transition: 20s;
 }
 
 .mega-coffee-img:hover {
-    transform: translateY(-84%);
-    transition: 20s;
+    transform: translateY(-83.5%);
 }
 
 .shining-moment-content {
@@ -587,6 +591,7 @@ body {
     color: var(--font-color);
     border: 1px solid var(--font-color);
     overflow: hidden;
+    cursor: pointer;
 }
 
 .modal-btn {
@@ -683,24 +688,31 @@ body {
     position: relative;
 }   
 
-.close,
-.close:after {
+.close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.close::before,
+.close::after {
     width: 35px;
     height: 1px;
     background: var(--font-color);
     position: absolute;
-    right: 0;
-    top: 5%;
     content: '';
-    cursor: pointer;
+    top: 50%;
 }
 
-.close {
+
+.close::after {
+    transform: rotate(45deg);
+}
+.close::before {
     transform: rotate(-45deg);
-}
-
-.close:after {
-    transform: rotate(-90deg);
 }
 
 .modal::-webkit-scrollbar {
