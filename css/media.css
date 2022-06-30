@@ -142,5 +142,29 @@
     .wrap-two {
         flex-direction: column;
     }
+
+    .my-text-box,
+    .publishing-page-text-all,
+    .skill-publishing-sub-text {
+        text-align: center;
+    }
+
+    .page-number-ab2 {
+        padding-left: 0;
+    }
+
+    .advantages-motto-sub-text,
+    .publishing-sub-text2 {
+        font-size: 18px;
+    }
+
+    .publishing-sub-text2 {
+        margin: 0 0 100px 0;
+        font-size: 18px;
+    }
+
+    .br {
+        display: block;
+    }
     
 }
