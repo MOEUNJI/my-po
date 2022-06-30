@@ -27,7 +27,8 @@ body {
     overflow-x: hidden;
 }
 
-.br {
+.br,
+.br2 {
     display: none;
 }
 
@@ -213,7 +214,7 @@ body {
     background: var(--font-color);
 }
 
-.wave-box:after {
+.wave-box::after {
     content: '';
     display: block;
     left: 0;
@@ -360,8 +361,8 @@ body {
     font-weight: bold;
 }
 
-.advantages:after,
-.motto:after {
+.advantages::after,
+.motto::after {
     content: '';
     background: var(--font-color);
     width: 90px;
@@ -639,7 +640,7 @@ body {
     display: inline-block;
     transition: 0.5s;
   }
-   .modal-btn span:nth-child(odd):before{
+   .modal-btn span:nth-child(odd)::before{
     content: attr(data-text);
     position: absolute;
     transform: translateY(100%);
@@ -650,7 +651,7 @@ body {
   .modal-btn:hover span:nth-child(odd){
     transform: translateY(0);
   }
-   .modal-btn span:nth-child(even):before{
+   .modal-btn span:nth-child(even)::before{
     content: attr(data-text);
     position: absolute;
     transform: translateY(-100%);
@@ -767,9 +768,9 @@ body {
 
 .greetings-sub {
     color: #c0c0c0;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
-    line-height: 170%;
+    line-height: 150%;
     margin: 32px 0;
 }
 
@@ -779,13 +780,13 @@ body {
     font-weight: 600;
 }
 
-.greetings-sub:after {
+.greetings-sub::after {
     content: '';
     display: block;
     width: 280px;
     height: 1px;
     background: var(--font-color);
-    margin: 135px 0;
+    margin: 20px 0;
 }
 
 .email-phone {
@@ -799,14 +800,14 @@ body {
 .email-phone-text-all {
     font-size: 21px;
     font-weight: 300;
-    margin-top: 15px;
+    margin-top: 50px;
 }
 
 .email,
 .phone {
     font-size: 50px;
     font-weight: 600;
-    margin-top: 120px;
+    margin-top: 50px;
     text-shadow: -3px 2px 0 rgba(255,255,255,0.25);
     margin-bottom: 30px;
 }
@@ -833,7 +834,8 @@ body {
     transform: skew(var(--skew)) scale(var(--scale));
 }
 
-.mongs-portfolio::before , p::after {
+.mongs-portfolio::before,
+p::after {
     content: attr(data-text);
     position: absolute;
     width: 100%;
