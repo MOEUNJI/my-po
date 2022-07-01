@@ -86,36 +86,70 @@ const content = document.getElementsByClassName('content');
         // 카운트업
         // console.log(countBox.dataset.indexNumber);
 
-        const protege = document.querySelector('.protege');
-        let countUpChk=true;
+        // const protege = document.querySelector('.protege');
+        // let countUpChk=true;
         
-        window.addEventListener('scroll', ()=>{
-            if(protege.getBoundingClientRect().top-window.innerHeight < 0){
-                if(countUpChk){
-                    countUpChk=false;
-                    countUp();
-                }
-            }else {
-                countUpChk=true;
-            }
-        })
+        // window.addEventListener('scroll', ()=>{
+        //     if(protege.getBoundingClientRect().top-window.innerHeight < 0){
+        //         if(countUpChk){
+        //             countUpChk=false;
+        //             countUp();
+        //         }
+        //     }else {
+        //         countUpChk=true;
+        //     }
+        // })
         
         
-        function countUp(){
-            const countBox = document.getElementsByClassName('count');
+        // function countUp(){
+        //     const countBox = document.getElementsByClassName('count');
             
-            for(let i = 0 ; i < countBox.length ; i ++ ){
-                let count = countBox[i].dataset.number;
+        //     for(let i = 0 ; i < countBox.length ; i ++ ){
+        //         let count = countBox[i].dataset.number;
     
+        //         for(let j=0;j<=count;j++){
+        //             setTimeout(() => {
+        //                 countBox[i].innerText=j;
+        //             }, 40*j );
+                    
+        //         }
+        //     }
+    
+        // }
+
+
+        
+
+        const countBox = document.getElementsByClassName('count');
+        
+        for(let i = 0 ; i < countBox.length ; i ++ ){
+            const count = countBox[i].dataset.number;
+            console.log(`카운트 ${i}번째는 ${count}야`)
+            let countUpChk=true;
+            
+            window.addEventListener('scroll', ()=>{
+                if(countBox[i].getBoundingClientRect().top-window.innerHeight < 0){
+                    if(countUpChk){
+                        countUpChk=false;
+                        countUp(count, countBox[i]);
+                    }
+                }else {
+                    countUpChk=true;
+                }
+            })
+        }
+        
+        
+        function countUp(count, countBoxSelector){    
                 for(let j=0;j<=count;j++){
                     setTimeout(() => {
-                        countBox[i].innerText=j;
+                        countBoxSelector.innerText=j;
                     }, 40*j );
                     
                 }
             }
     
-        }
+        
         
 
         // 글리치효과
