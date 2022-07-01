@@ -16,12 +16,15 @@
     .my-id-photo {
         width: 350px;
         height: 430px;
-        margin-top: 100px;
     }
 
     .my-photo,
     .advantages-motto {
         width: 100%;
+    }
+
+    .my-text-box {
+        top: 220px;
     }
 
     
@@ -81,7 +84,7 @@
     }
 
     .email-phone {
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
     }
 
@@ -98,6 +101,10 @@
     .advantages-motto,
     .my-photo  {
         flex-direction: column;
+    }
+
+    .my-photo {
+        padding: 0;
     }
 
     .advantages-motto-fade-slides {
@@ -119,6 +126,7 @@
     .my-text-box {
         position: relative;
         margin: 42px auto;
+        top: 90px;
     }
 
     .my-id-photo {
@@ -187,6 +195,10 @@
         padding-left: 0;
     }
 
+    .greetings-sub::after {
+        margin: 30px auto;
+    }
+
     .contact-page-text,
     .email-phone-text {
         text-align: center;
@@ -244,6 +256,7 @@
     .my-text-box {
         top: -50px;
         width: 100%;
+        margin: 170px auto 0 auto;
     }
 
     .name {
