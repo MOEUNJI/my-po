@@ -246,6 +246,10 @@
         width: 100%;
     }
 
+    .name {
+        font-size: 16px;
+    }
+
     .my-photo-photo  {
         height: 570px;
     }
