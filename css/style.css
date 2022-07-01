@@ -834,12 +834,20 @@ body {
     transform: skew(var(--skew)) scale(var(--scale));
 }
 
-.mongs-portfolio::before,
-p::after {
+.mongs-portfolio::before {
     content: attr(data-text);
     position: absolute;
     width: 100%;
     clip-path: clip-path 50ms ease-in;
+}
+
+.greetings-sub::after {
+    content: '';
+    display: block;
+    width: 280px;
+    height: 1px;
+    color: var(--font-color);
+    margin: 30px auto;
 }
 
 .mongs-portfolio::before {
