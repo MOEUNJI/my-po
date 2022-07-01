@@ -273,6 +273,10 @@ body {
     margin: 120px auto;
 }
 
+.my-photo {
+    padding-top: 120px;
+}
+
 .my-photo,
 .advantages-motto {
     display: flex;
@@ -309,6 +313,10 @@ body {
     position: absolute;
     top: -120px;
     z-index: -1;
+}
+
+.page-01 {
+    top: 0;
 }
 
 .name {
