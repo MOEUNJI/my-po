@@ -19,6 +19,7 @@
 :root {
     --background-color: #121212;
     --font-color: #fdfdfd;
+    --title-color: #232323;
 }
 
 body {
@@ -308,7 +309,7 @@ body {
 
 .page-number {
     font-size: 300px;
-    color: #232323;
+    color: var(--title-color);
     font-weight: bold;
     position: absolute;
     top: -120px;

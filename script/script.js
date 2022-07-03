@@ -71,12 +71,18 @@ const content = document.getElementsByClassName('content');
         // 엑스버튼
 
         for(let i = 0; i < modalBtn.length ; i++ ){
+            // i 의 값이 모달창띄우기의 개수보다 작으면 i는 모달창띄우기의 갯수만큼 증가함
             modalBtn[i].addEventListener('click',() => {
+                // 모달창띄우기 [i]번째 버튼을 클릭하면
                 modalOverlay[i].style.display = 'flex';
+                // 모달창을 포함한 브라우저의 모든 공간의 속성이none 에서 flex로 변함
             });
             for(let j = 0; j < modalClose.length ; j++){
+                // j = 0 j가 엑스버튼의 개수보다 작으면 j는 close버튼의 개수만큼 증가
                 modalClose[j].addEventListener('click',()=>{
+                    // close[j] 번째 버튼을 클릭시
                     modalOverlay[i].style.display = 'none';
+                    // 모달창을 포함한 모든 브라우저의 모든 공간의 속성이 flex에서none으로 변경
                 })
             }
         }
@@ -121,16 +127,23 @@ const content = document.getElementsByClassName('content');
         
 
         const countBox = document.getElementsByClassName('count');
+        // countBox에 데이터 넘버가 들어있는 클래스를 대입함
         
         for(let i = 0 ; i < countBox.length ; i ++ ){
+            // i = 0 i가 클래스로 카운트를 가진것들보다 작으면 i는 카운트의 갯수만큼 증가함
             const count = countBox[i].dataset.number;
+            // count에 카운트박스에i번째에 있는 data-number 를 가져와 대입
             console.log(`카운트 ${i}번째는 ${count}야`)
             let countUpChk=true;
+            // 
             
             window.addEventListener('scroll', ()=>{
+                // 스크롤 했을 때
                 if(countBox[i].getBoundingClientRect().top-window.innerHeight < 0){
+                    // 화면 상단부터 countBox[i]번째의 위치에서 브라우저의 이너하이쓰를 뺀 것이 0보다 작아지면 즉 스크롤하다 해당컨텐츠가 바닥에서 보이면
                     if(countUpChk){
                         countUpChk=false;
+                        // true로 되어있는 카운트업체크를 false로 바꿔줌
                         countUp(count, countBox[i]);
                     }
                 }else {
