@@ -15,7 +15,6 @@
     font-style: normal;
 }
 
-
 :root {
     --background-color: #121212;
     --font-color: #fdfdfd;
@@ -112,73 +111,6 @@ body {
         transform: translateY(100vh);
     }
 }
-
-
-/* ------------tag--------------------- */
-.hashtag {
-    font-size: 18px;
-    color: var(--font-color);
-}
-
-.comet {
-    width: 5vw;
-
-}
-
-.tag-01 {
-    width: 5vw;
-
-}
-
-.tag-02 {
-    width: 5vw;
-}
-
-.tag-03 {
-    width: 5vw;
-    top: 50%;
-
-}
-
-.tag-04 {
-    width: 5vw;
-
-}
-
-.tag-05 {
-    width: 5vw;
-
-}
-
-.tag-06 {
-    width: 5vw;
-
-}
-
-.tag-07 {
-    width: 5vw;
-
-}
-
-.tag-08 {
-    width: 5vw;
-
-}
-
-.tag-09 {
-    width: 5vw;
-
-}
-
-.tag-10 {
-    width: 5vw;
-
-}
-
-.tag-11 {
-    width: 5vw;
-
-} 
 
 /* --------------wave------------------- */
 .wave-box {
@@ -513,7 +445,6 @@ body {
     color: var(--font-color);
 }
 
-
 .publishing-page {
     width: 1200px;
     margin: 0 auto;
@@ -644,7 +575,6 @@ body {
      );
   }
 
-
   .modal-btn span{
     display: inline-block;
     transition: 0.5s;
@@ -671,7 +601,6 @@ body {
   .modal-btn:hover span:nth-child(even){
     transform: translateY(0);
   }
-
 
 .modal-overlay {
     width: 100%;
@@ -729,10 +658,10 @@ body {
     top: 50%;
 }
 
-
 .close::after {
     transform: rotate(45deg);
 }
+
 .close::before {
     transform: rotate(-45deg);
 }
@@ -751,18 +680,32 @@ body {
     border: none;
     padding: 15px;
     transition: 0.5s;
+    position: relative;
+}
+
+.view-site::before {
+    top: 0;
+    left: 0;
+    width: 0;
+    position: absolute;
+    height: 100%;
+    content: '';
+    display: block;
+    background: var(--font-color);
+    transition: 0.5s;
 }
 
 .view-site > a {
     color: var(--font-color);
 }
 
-.view-site:hover {
-    background: #fdfdfd;
+.view-site:hover::before{
+    width: 100%;
 }
 
 .view-site:hover > a {
     color: #121212;
+    z-index: 999;
 }
 
 .contact-page {
@@ -846,7 +789,6 @@ body {
     color: var(--font-color);
 }
 
-
 .mongs-portfolio {
     font-size: 40px;
     color: #fdfdfd;
@@ -886,14 +828,12 @@ body {
     );
 }
 
-
 .typing-text {
     display: inline;
     vertical-align: middle;
     border-right: .05em solid black;
     animation: cursor 0.2s ease infinite;
 }
-
 
 .fade {
     opacity: 0;
