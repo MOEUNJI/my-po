@@ -311,10 +311,6 @@ const content = document.getElementsByClassName('content');
             const originY = (eye.getBoundingClientRect().top + eye.getBoundingClientRect().bottom)/2;
 
 
-            console.log(`커서위치는 x:${e.clientX} y:${e.clientY}`)
-            console.log(`눈 위치는 ${originX} ${originY}`)
-            
-
             let x = (e.clientX - originX)/window.innerWidth*50;
             let y = (e.clientY - originY)/window.innerHeight*100;
 
