@@ -179,6 +179,31 @@ const content = document.getElementsByClassName('content');
         setInterval(() => {
             createSnow();
         }, 100);
+
+
+
+        const container = document.querySelector('.main-page');
+        const move = document.getElementsByClassName('move');
+        let center = [window.innerWidth/2 , window.innerHeight/2];
+
+
+        window.addEventListener('resize', ()=>{
+            let center = [window.innerWidth/2 , window.innerHeight/2];
+            console.log(center)
+        })
+
+
+        for(let i = 0; i < move.length; i++){
+            container.addEventListener('mousemove', (e) => {
+                const vecter = Math.pow(-1,i);
+                const pointerNow = [e.clientX-center[0] , e.clientY-center[1]];
+                const howMove = [pointerNow[0]/center[0]*50*vecter,pointerNow[1]/center[1]*50*vecter];        
+                move[i].style.transform = `translate(${howMove[0]}px,${howMove[1]}px)`;
+            })
+            
+        }
+        
+
         
         
 
