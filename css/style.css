@@ -778,29 +778,16 @@ header {
     position: relative;
 }
 
-.view-site::before {
-    top: 0;
-    left: 0;
-    width: 0;
-    position: absolute;
-    height: 100%;
-    content: '';
-    display: block;
-    background: var(--font-color);
-    transition: 0.5s;
-}
-
 .view-site > a {
     color: var(--font-color);
 }
 
-.view-site:hover::before{
-    width: 100%;
+.view-site:hover {
+    background: var(--font-color);
 }
 
 .view-site:hover > a {
     color: #121212;
-    z-index: 999;
 }
 
 .contact-page {
