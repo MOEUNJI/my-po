@@ -223,10 +223,6 @@
         overflow-x: hidden;
     }
 
-    .mobile-menu {
-        display: flex;
-    }
-
     .about-me-page,
     .publishing-page,
     .contact-page {
@@ -241,7 +237,18 @@
         width: 50px;
     }
 
+    .header-nav > ul {
+        display: flex;
+        flex-direction: column;
+    }
 
+    .header-nav > ul > li {
+        margin: 5px 0;
+    }
+
+    .header-nav > ul > li > a {
+        font-size: 10px;
+    }
 
     .wave {
         height: 300px;

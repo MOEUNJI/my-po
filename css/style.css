@@ -68,29 +68,6 @@ header {
     /* flex-direction: column; */
 }
 
-.mobile-menu {
-    width: 50px;
-    height: 50px;
-    display: none;
-}
-
-.ham {
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--font-color);
-}
-
-.ham::after,
-.ham::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--font-color);
-    margin: 5px 0;
-}
-
 .snow-box {
     position: absolute;
     top: 0;
