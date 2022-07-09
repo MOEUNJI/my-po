@@ -18,6 +18,12 @@
         box-sizing: border-box;
     }
 
+    .all-header {
+        width: 100%;
+        padding: 0 32px;
+        box-sizing: border-box;
+    }
+
     .my-id-photo {
         width: 350px;
         height: 430px;
@@ -217,6 +223,10 @@
         overflow-x: hidden;
     }
 
+    .mobile-menu {
+        display: flex;
+    }
+
     .about-me-page,
     .publishing-page,
     .contact-page {
@@ -225,6 +235,13 @@
         margin-top: 120px;
         box-sizing: border-box;
     }
+
+    .logo-img,
+    .logo-img > img {
+        width: 50px;
+    }
+
+
 
     .wave {
         height: 300px;
