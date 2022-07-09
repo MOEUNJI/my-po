@@ -85,7 +85,7 @@ header {
 
 .container {
     position: relative;
-
+    display: block;
 }
 
 .move1 {
