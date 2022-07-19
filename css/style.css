@@ -775,19 +775,21 @@ header {
     border: none;
     padding: 15px;
     transition: 0.5s;
+    width: 100%;
+    color: var(--font-color);
     position: relative;
 }
 
-.view-site > a {
-    color: var(--font-color);
-}
-
-.view-site:hover {
+.view-site-btn:hover > button{
     background: var(--font-color);
 }
 
-.view-site:hover > a {
+.view-site-btn:hover > button {
     color: #121212;
+}
+
+.view-site {
+    cursor: pointer;
 }
 
 .contact-page {
