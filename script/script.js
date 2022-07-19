@@ -1,24 +1,15 @@
 const content = document.getElementsByClassName('content');
-        // 공통 클래스인 content 불러옴
         window.addEventListener('scroll',()=>{
-            // 윈도우에 스크롤 했을 때
             const winH = window.innerHeight;
-            // winH = 브라우저 위쪽에 잡다한거 빼고 콘텐츠가 표시되는 부분의 height만 대입함
 
             for ( let i = 0 ; i < content.length ; i ++){   
-                // i 가 content 의 갯수보다 작으면 i는 content의 갯수만큼 증가함
                 const contentTop = content[i].getBoundingClientRect().top;
-                // i 번째에 있는 요소의 top으로부터의 거리를 계산해서 contentTop에 대입함
                 
                 if(contentTop - winH < 0){
-                    // i번째에 있는 요소의 화면 상단 부터 대상의 처음 위치 값 - 브라우저에서 콘텐츠가 표시되는 부분의 height 한게 0 보다 작으면
                     content[i].classList.add('in');
-                    // content 의  i 번째에 있는 요소에 in 을 붙여준다
                 }
                 if(contentTop - winH > 0){
-                    // i번째에 있는 요소의 화면 상단 부터 대상의 처음 위치 값-브라우저에서 콘텐츠가 표시되는 부분의 height 한게 0 보다 크면 
                     content[i].classList.remove('in');
-                    // content 의 i 번째에 있는 요소에 in 을 제거해서 스크롤을 올렸다가 다시 내려도 다시 작동하게 함
                 }
             }
         })
@@ -34,9 +25,7 @@ const content = document.getElementsByClassName('content');
         // 지워졌다 새로운거 써지는 글씨
         let typeText = document.querySelector(".type-text")
         var textToBeTypedArr = ["끊임없이 성장중인", "맡은 바에 최선을 다하는", "노력하며,성실하게 나아가는"]
-        // 이 부분에서 조정하면 됨
         var index = 0, isAdding = true, textToBeTypedIndex = 0
-        // start animation
         playAnim()
         
         
@@ -62,88 +51,35 @@ const content = document.getElementsByClassName('content');
 
         
         
-        // 모달창
         const modalBtn = document.getElementsByClassName('modal-btn');   
-        // 모달창띄우기 버튼
         const modalOverlay = document.getElementsByClassName('modal-overlay');
-        // 브라우저 위에 띄워질때 모달창을 포함한 브라우저의 모든 공간 
         const modalClose = document.getElementsByClassName('close');
-        // 엑스버튼
 
         for(let i = 0; i < modalBtn.length ; i++ ){
-            // i 의 값이 모달창띄우기의 개수보다 작으면 i는 모달창띄우기의 갯수만큼 증가함
             modalBtn[i].addEventListener('click',() => {
-                // 모달창띄우기 [i]번째 버튼을 클릭하면
                 modalOverlay[i].style.display = 'flex';
-                // 모달창을 포함한 브라우저의 모든 공간의 속성이none 에서 flex로 변함
             });
             for(let j = 0; j < modalClose.length ; j++){
-                // j = 0 j가 엑스버튼의 개수보다 작으면 j는 close버튼의 개수만큼 증가
                 modalClose[j].addEventListener('click',()=>{
-                    // close[j] 번째 버튼을 클릭시
                     modalOverlay[i].style.display = 'none';
-                    // 모달창을 포함한 모든 브라우저의 모든 공간의 속성이 flex에서none으로 변경
                 })
             }
         }
-        
-        
-        
+
+
         // 카운트업
-        // console.log(countBox.dataset.indexNumber);
-
-        // const protege = document.querySelector('.protege');
-        // let countUpChk=true;
-        
-        // window.addEventListener('scroll', ()=>{
-        //     if(protege.getBoundingClientRect().top-window.innerHeight < 0){
-        //         if(countUpChk){
-        //             countUpChk=false;
-        //             countUp();
-        //         }
-        //     }else {
-        //         countUpChk=true;
-        //     }
-        // })
-        
-        
-        // function countUp(){
-        //     const countBox = document.getElementsByClassName('count');
-            
-        //     for(let i = 0 ; i < countBox.length ; i ++ ){
-        //         let count = countBox[i].dataset.number;
-    
-        //         for(let j=0;j<=count;j++){
-        //             setTimeout(() => {
-        //                 countBox[i].innerText=j;
-        //             }, 40*j );
-                    
-        //         }
-        //     }
-    
-        // }
-
-
-        
 
         const countBox = document.getElementsByClassName('count');
-        // countBox에 데이터 넘버가 들어있는 클래스를 대입함
         
         for(let i = 0 ; i < countBox.length ; i ++ ){
-            // i = 0 i가 클래스로 카운트를 가진것들보다 작으면 i는 카운트의 갯수만큼 증가함
             const count = countBox[i].dataset.number;
-            // count에 카운트박스에i번째에 있는 data-number 를 가져와 대입
             console.log(`카운트 ${i}번째는 ${count}야`)
             let countUpChk=true;
-            // 
             
             window.addEventListener('scroll', ()=>{
-                // 스크롤 했을 때
                 if(countBox[i].getBoundingClientRect().top-window.innerHeight < 0){
-                    // 화면 상단부터 countBox[i]번째의 위치에서 브라우저의 이너하이쓰를 뺀 것이 0보다 작아지면 즉 스크롤하다 해당컨텐츠가 바닥에서 보이면
                     if(countUpChk){
                         countUpChk=false;
-                        // true로 되어있는 카운트업체크를 false로 바꿔줌
                         countUp(count, countBox[i]);
                     }
                 }else {
@@ -196,6 +132,7 @@ const content = document.getElementsByClassName('content');
         for(let i = 0; i < move.length; i++){
             container.addEventListener('mousemove', (e) => {
                 const vecter = Math.pow(-1,i);
+                // 
                 const pointerNow = [e.clientX-center[0] , e.clientY-center[1]];
                 const howMove = [pointerNow[0]/center[0]*50*vecter,pointerNow[1]/center[1]*50*vecter];        
                 move[i].style.transform = `translate(${howMove[0]}px,${howMove[1]}px)`;
@@ -215,7 +152,6 @@ const content = document.getElementsByClassName('content');
             el.classList.add('snow');
             el.classList.add(`snow${Math.floor(Math.random()*3)+1}`);
             el.style.left = randomWidthPosition() + 'px';
-            // el.style.marginTop = randomHeightPosition() + 'px';
             page.appendChild(el);
             
             setTimeout(() => {
@@ -272,40 +208,29 @@ const content = document.getElementsByClassName('content');
 
 
           // 끊임없이 성장중인, 노력하며 성실하게 나아가는, 맡은 바에 최선을 다하는
-          // 위에거랑
           function playAnim() {
               setTimeout(function () {
-                  // set the text of typeText to a substring of the text to be typed using index.
                   typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
                   if (isAdding) {
-                      // adding text
                       if (index > textToBeTypedArr[textToBeTypedIndex].length) {
-                          // no more text to add
                           isAdding = false
                           typeText.classList.add("showAnim")
-                          //break: wait 2s before playing again
                           setTimeout(function () {
                               typeText.classList.remove("showAnim")
                               playAnim()
                           }, 2000)
                           return
                       } else {
-                          // increment index by 1
                           index++
                       }
                   } else {
-                      // removing text
                       if (index === 0) {
-                          // no more text to remove
                           isAdding = true
-                          //switch to next text in text array
                           textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
                       } else {
-                          // decrement index by 1
                           index--
                       }
                   }
-                  // call itself
                   playAnim()
               }, isAdding ? 120 : 60)
           }
@@ -357,12 +282,9 @@ const content = document.getElementsByClassName('content');
         function glitch(element){
             let count = 0
             setInterval(()=>{
-                // element
                 const skew = Math.random() * 20 - 10
-                //  element::before
                 const top1 = Math.random() * 100
                 const btm1 = Math.random() * 100
-                //  element::after
                 const top2 = Math.random() * 100
                 const btm2 = Math.random() * 100
 
@@ -376,15 +298,8 @@ const content = document.getElementsByClassName('content');
                 count++ 
                 
                 if(count % 15 === 0){
-                    // 1.5초마다 실행
                     const bigSkew = Math.random() * 180 - 90
                     element.style.setProperty('--skew',`${bigSkew}deg`)
                 }
-
-                // if(count % 30 === 0){
-                //     // 3초마다 실행
-                //     const bigScale = 1 + Math.random() / 2
-                //     element.style.setProperty('--scale',`${bigScale}deg`)
-                // }
             }, 100)
         }
