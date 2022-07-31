@@ -239,7 +239,9 @@ const content = document.getElementsByClassName('content');
         //   페이드인 슬라이드
           function nextSlide(){
             slides[currentSlide].className =" slide";
-            currentSlide =(currentSlide+1) % slides.length;
+            currentSlide = (currentSlide + 1) % slides.length;
+            console.log(slides.length);
+            console.log(currentSlide)
             slides[currentSlide].className = " slide showing";
         }
 
